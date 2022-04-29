@@ -1,13 +1,13 @@
 # Cheri Hansen - cherilynne@byui.edu
 # Created 4/28/2022
-# Week 1 Assignment - CSE111-12
-# Create a program that calculates best heart rates for exercise
+# Week 2 Group Assignment - CSE111-12
+# Create a program that calculate the bill
 
 # Import the datatime class from the datetime
-# module so taht it can be used inthis program.
+# module so that it can be used in this program.
 from datetime import datetime
 
-
+# calculate discount, subtotal, sale tax, subtotal amount
 def calculateBill(subtotal):
     discount = 0
     # Calculate day of week - 0 = Monday, 6 = Sunday
@@ -21,6 +21,7 @@ def calculateBill(subtotal):
         total = subtotal + tax
         print(f"Subtotal {subtotal:,.2f}: Tax {tax:,.2f}: Total {total:,.2f}")
 
+# calsulate Subtotal
 def main():
     subtotal = float(input('Subtotal cost: '))
     calculateBill(subtotal)

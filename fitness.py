@@ -24,9 +24,9 @@ def main():
 
     # Print the results for the user to see.
     print(f"Age (year): {years} years old.")
-    print(f"Weight (Kg): {Kg:.2f}. ")
+    print(f"Weight (Kg): {kg:.2f}. ")
     print(f"Height (cm): {cm:.2f}. ")
-    print(f"Body mass index: {mbi:.2f}."}
+    print(f"Body mass index: {mbi:.2f}.")
     print(f"Basal metabolic rate (kcal/day): {bmr:.0f}. ")
 
 def compute_age(birth_str):
@@ -58,7 +58,7 @@ def kg_from_lb(pounds):
     Parameter pounds: a mass in U.S. pounds.
     Return: the mass in kilograms.
     """
-    kg=weight_lbs/2.205
+    kg=pounds/2.205
     return kg
 
 

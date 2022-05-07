@@ -24,7 +24,7 @@ def main():
     # as draw_sky and draw_ground here.
     draw_pine_tree(canvas, 550, 150, 250)
     draw_pine_tree(canvas, 200, 100, 200)
-    draw_blue_sky(canvas, ) 
+    draw_sky(canvas, scene_width, scene_height)
     for x in range(100, 200, 100): 
         draw_pine_tree(canvas, 0, 250, 80)
     draw_grid(canvas, scene_width, scene_height, 50)
@@ -37,7 +37,7 @@ def main():
 
     # Define your functions such as
     # draw_sky and draw_ground here.
-def draw_pine_tree(canvas, center x, bottom, height):
+def draw_pine_tree(canvas, center_x, bottom, height):
     # draw trunk of the tree.
     trunk_width = height / 10
     trunk_height = height / 8
@@ -45,15 +45,15 @@ def draw_pine_tree(canvas, center x, bottom, height):
     bottom_trunk = bottom
     right_trunk = center_x + trunk_width / 2
     trunk_top = bottom + trunk_height
-    draw_rectangle(canvas, feft_trunk, bottom_trunck, right_trunk, 
+    draw_rectangle(canvas, left_trunk, bottom_trunk, right_trunk, 
     trunk_top, fill="tan4")
 
 
     # draw skirt of the tree.
-     skirt_width = height / 2
+    skirt_width = height / 2
     skirt_left = center_x - skirt_width / 2
     skirt_bottom = trunk_top
-    peak_x = cemter_x
+    peak_x = center_x
     peak_y = bottom + height
     skirt_right = center_x + skirt_width / 2
     draw_polygon(canvas, skirt_left, skirt_bottom, peak_x,
@@ -65,14 +65,14 @@ def draw_grid(canvas, width, height, interval):
     # draw verical lines
     label_y = 15
     for x in range(interval, width, interval):
-        draw_lines(canvas, x, 0, x,height)
+        draw_line(canvas, x, label_y*2, x, height)
         draw_text(canvas, x, label_y, f"{x}") 
      
       # draw horixontal lines
     label_x = 15
     for y in range(interval, width, interval):
-        draw_lines(canvas, 0, x, y, width, y)
-        draw_text(canvas, x, label_x, y, f"{y}") 
+        draw_line(canvas, label_x*2, y, width, y)
+        draw_text(canvas, label_x, y, f"{y}") 
      
 
 

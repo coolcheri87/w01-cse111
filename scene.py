@@ -22,11 +22,11 @@ def main():
 
     # Call your drawing functions such
     # as draw_sky and draw_ground here.
+    draw_sky(canvas, scene_width, scene_height)
     draw_pine_tree(canvas, 550, 150, 250)
     draw_pine_tree(canvas, 200, 100, 200)
-    draw_sky(canvas, scene_width, scene_height)
     for x in range(100, 200, 100): 
-        draw_pine_tree(canvas, 0, 250, 80)
+        draw_pine_tree(canvas, 400, 250, 80)
     draw_grid(canvas, scene_width, scene_height, 50)
 
 
@@ -74,12 +74,34 @@ def draw_grid(canvas, width, height, interval):
         draw_line(canvas, label_x*2, y, width, y)
         draw_text(canvas, label_x, y, f"{y}") 
      
-
+def draw_cloud(canvas, x0, y0, x1, y1):
+    draw_oval(canvas, x0, y0, x1, y1, width=1, outline="white", fill="white")
 
 def draw_sky(canvas, scene_width, scene_height):
     """Draw the ground and all the objects on the ground."""
-    draw_rectangle(canvas, 0, 0,
-        scene_width, scene_height / 3, width=0, fill="tan4")
+    draw_rectangle(canvas, 0, 0, scene_width, scene_height / 3, width = 0, fill="tan4")
+    draw_rectangle(canvas, 0, scene_height / 3, scene_width, scene_height, width =0, fill="lightBlue")
+
+    # Draw a cloud.
+    x0 = 450
+    y0 = 500
+    x1 = 350
+    y1 = 400
+    draw_cloud(canvas, x0, y0, x1, y1)
+
+    # Draw a cloud.
+    x0 = 600
+    y0 = 350
+    x1 = 400
+    y1 = 250
+    draw_cloud(canvas, x0, y0, x1, y1)
+    
+    # Draw a cloud.
+    x0 = 100
+    y0 = 350
+    x1 = 400
+    y1 = 500
+    draw_cloud(canvas, x0, y0, x1, y1)
 
     # Draw a pine tree.
     tree_center_x = 170
@@ -130,7 +152,8 @@ def draw_pine_tree(canvas, center_x, bottom, height):
             skirt_left, trunk_top,
             outline="gray20", width=1, fill="dark green")
   
-
+    # Draw the cloud in sky
+    #draw_oval(canvas, cloud_left, cloud+top, cloud_right, bottom, width=3, fill-"gray")
 
 # Call the main function so that
 # this program will start executing.

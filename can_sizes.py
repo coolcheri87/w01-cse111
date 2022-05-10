@@ -3,12 +3,15 @@
 
 import math
 
+
 def main():
-    # Call the cone_volume function to compute
-    # the volume of an example cone.
-    ex_radius = 2.8
-    ex_height = 3.2
-    cost_per_can= cone_volume()
+    # Call the storage_efficiency function to compute
+    # the volume of an surface_area.
+    radius = 2.8
+    height = 3.2
+    volume = pi*radius**2*height
+    surface_area = 2*pi*radius*(radius + height)
+    storage_efficiency = volume/surface_area
 
 
     # Print several lines that describe this program.
@@ -41,5 +44,18 @@ def compute_surface_area(radius, height):
     volume = math.pi * radius**2 * height / 3
     return volume
 
+def compute_storage_efficiency(radius, height):
+
+def compute_volume(radius, height):
+
+def compute_surface_area(radius, height):
+
+    
+
+def
 # Start this program by
 # calling the main function.
+
+# Start this program by
+# calling the main function.
+main()

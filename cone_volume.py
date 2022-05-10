@@ -19,8 +19,8 @@ def main():
     print(f"then the volume is {ex_vol:.1f}")
     print()
 
-    # Get the radius5
-    # 5 and height of the cone from the user.
+    # Get the radius
+    # and height of the cone from the user.
     radius = float(input("Please enter the radius of the cone: "))
     height = float(input("Please enter the height of the cone: "))
 

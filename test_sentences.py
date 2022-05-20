@@ -34,7 +34,7 @@ def get_determiner(quantity):
         words = ["two", "some", "many", "the"]
 
     determ = get_determiner(1)
-        ["a", "one", "the", "determ"]
+        ["a", "the", "determ"]
 
 def get_noun(quantity):
      """Return a randomly chosen noun.

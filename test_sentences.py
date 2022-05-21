@@ -35,9 +35,6 @@ def get_determiner(quantity):
         words = ["two", "some", "many", "the"]
     return random.choice(word)
 
-    determ = get_determiner(1)
-
-
 def get_noun(quantity):
     """Return a randomly chosen noun.
     If quantity == 1, this function will
@@ -58,8 +55,8 @@ def get_noun(quantity):
     if quantity == 1:
             words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
     else:
-            words = [ "birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", "rabbits", "women"
-]
+            words = [ "birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", 
+            "rabbits", "women"]
     return random.choice(word)
 
 
@@ -89,8 +86,21 @@ def get_verb(quantity, tense):
             either "past", "present" or "future".
     Return: a randomly chosen verb.
     """
+    words = [ "drank", "ate", "grew", "laughed", "thought",
+        "ran", "slept", "talked", "walked", "wrote"]
+   
+    if quantity == 1:
+        words = [ "drank", "ate", "grew", "laughed", "thought",
+        "ran", "slept", "talked", "walked", "wrote"]  
+    else quantity !== 1:
+        words = ["drink", "eat", "grow", "laugh", "think",
+        "run", "sleep", "talk", "walk", "write"]
+    eise:
+        words = ["will drink", "will eat", "will grow", "will laugh",
+        "will think", "will run", "will sleep", "will talk",
+        "will walk", "will write"]
 
-
+    return random.choice(word)
 
 def test_get_determiner():
     # 1. Test the single determiners.
@@ -125,7 +135,7 @@ def test_get_determiner():
         # Verify that the word returned from get_determiner
         # is one of the words in the plural_determiners list.
         assert word in plural_determiners
-        
+
     # Call the get_determiner function.
     determ = get_determiner(1)
 

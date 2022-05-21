@@ -34,10 +34,10 @@ def get_determiner(quantity):
         words = ["two", "some", "many", "the"]
 
     determ = get_determiner(1)
-        ["a", "the", "determ"]
+
 
 def get_noun(quantity):
-     """Return a randomly chosen noun.
+    """Return a randomly chosen noun.
     If quantity == 1, this function will
     return one of these ten single nouns:
         "bird", "boy", "car", "cat", "child",
@@ -54,7 +54,7 @@ def get_noun(quantity):
     """
 
 def get_verb(quantity, tense):
-     """Return a randomly chosen verb. If tense is "past",
+    """Return a randomly chosen verb. If tense is "past",
     this function will return one of these ten verbs:
         "drank", "ate", "grew", "laughed", "thought",
         "ran", "slept", "talked", "walked", "wrote"
@@ -79,6 +79,9 @@ def get_verb(quantity, tense):
             either "past", "present" or "future".
     Return: a randomly chosen verb.
     """
+
+
+
 def test_get_determiner():
     # 1. Test the single determiners.
 

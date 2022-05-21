@@ -28,10 +28,12 @@ def get_determiner(quantity):
             noun.
     Return: a randomly chosen determiner.
     """
+    words = [ "the", "a", "one", "two", "some", "many"]
     if quantity == 1:
         words = ["a", "one", "the"]
     else:
         words = ["two", "some", "many", "the"]
+    return random.choice(word)
 
     determ = get_determiner(1)
 
@@ -52,6 +54,14 @@ def get_noun(quantity):
             the returned noun is single or plural.
     Return: a randomly chosen noun.
     """
+    words = ["boy", "girl", "cat", "dog", "bird", "house"]
+    if quantity == 1:
+            words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
+    else:
+            words = [ "birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", "rabbits", "women"
+]
+    return random.choice(word)
+
 
 def get_verb(quantity, tense):
     """Return a randomly chosen verb. If tense is "past",
@@ -115,6 +125,7 @@ def test_get_determiner():
         # Verify that the word returned from get_determiner
         # is one of the words in the plural_determiners list.
         assert word in plural_determiners
+        
     # Call the get_determiner function.
     determ = get_determiner(1)
 

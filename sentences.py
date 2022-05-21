@@ -35,7 +35,7 @@ def get_noun(quantity):
     If quantity == 1, this function will
     return one of these ten single nouns:
         "bird", "boy", "car", "cat", "child",
-        "dog", "girl", "man", "rabbit", "woman"
+        "dog", "girl", "man", "rabbit", "woman"         
     Otherwise, this function will return one of
     these ten plural nouns:
         "birds", "boys", "cars", "cats", "children",

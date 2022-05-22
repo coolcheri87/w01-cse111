@@ -54,15 +54,10 @@ def get_noun(quantity):
             the returned noun is single or plural.
     Return: a randomly chosen noun.
     """
-    words = ["boy", "girl", "cat", "dog", "bird", "house"]
-    if words == "single":
-            words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
-            if quantity == 1:
-                words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
-
-    if words == "plural":
-            words = ["birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", 
-            "rabbits", "women"]
+    words = ["birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", "rabbits", "women"]
+    if words == 1:
+        words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
+            
     word = random.choice(words)
     return word
 
@@ -151,9 +146,107 @@ def test_get_determiner():
     words = ["a", "one", "the"]
     assert determ in words   
 
- # Randomly choose and return a determiner.
+    # Randomly choose and return a determiner.
     word = random.choice(words)
     return words
+
+
+def test_get_noun():
+    # 1. Test the single nouns.
+
+    single_nouns = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
+
+    # This loop will repeat the statements inside it 4 times.
+    # If a loop's counting variable is not used inside the
+    # body of the loop, many programmers will use underscore
+    # (_) as the variable name for the counting variable.
+    for _ in range(4):
+
+        # Call the get_noun function which
+        # should return a single nouns.
+        word = get_noun(1)
+
+        # Verify that the word returned from get_noun
+        # is one of the words in the single_nouns list.
+        assert word in single_nouns
+
+    # 2. Test the plural nouns.
+
+    plural_nouns = ["birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", "rabbits", "women"]
+
+    # This loop will repeat the statements inside it 4 times.
+    for _ in range(4):
+
+        # Call the get_noun function which
+        # should return a plural noun.
+        word = get_noun(2)
+
+        # Verify that the word returned from get_noun
+        # is one of the words in the plural_nouns list.
+        assert word in plural_nouns
+
+    # Call the get_noun function.
+    determ = get_noun(1)
+
+    # Verify that the word stored in the variable
+    # determ is in the list of single nouns.
+    words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
+    assert determ in words   
+
+    # Randomly choose and return a noun.
+    word = random.choice(words)
+    return words
+
+def test_get_verb():
+
+    # past
+    past_verbs = ["drank", "ate", "grew", "laughed", "thought", "ran", "slept", "talked", "walked", "wrote"]
+    for _ in range(4):
+
+        # Call the get_verb function which
+        # should return a single verbs.
+        word = get_verb(1,"past")
+
+        # Verify that the word returned from get_verb
+        # is one of the words in the present_single_verb list.
+        assert word in past_verbs
+
+    # present single verb
+    present_single_verbs = ["drink", "eat", "grow", "laugh", "think", "run", "sleep", "talk", "walk", "write"]
+    for _ in range(4):
+
+        # Call the get_verb function which
+        # should return a present single verbs.
+        word = get_verb(1,"present")
+
+        # Verify that the word returned from get_verb
+        # is one of the words in the present_single_verb list.
+        assert word in present_single_verbs
+
+    # present plural verb
+    present_plural_verbs = ["drinks", "eats", "grows", "laughs", "thinks", "runs", "sleeps", "talks", "walks", "writes"]
+    for _ in range(4):
+
+        # Call the get_verb function which
+        # should return a present_plural_verbs.
+        word = get_verb(1,"present")
+
+        # Verify that the word returned from get_verb
+        # is one of the words in the present_plural_verb list.
+        assert word in present_plural_verbs
+
+
+    # future
+    future_verbs = ["will drink", "will eat", "will grow", "will laugh","will think", "will run", "will sleep", "will talk", "will walk", "will write"]
+    for _ in range(4):
+
+        # Call the get_future verb function which
+        # should return a future_verbs.
+        word = get_verb(1,"future")
+
+        # Verify that the word returned from get_verb
+        # is one of the words in the future_verb list.
+        assert word in future_verbs
 
 # Call the main function that is part of pytest so that the
 # computer will execute the test functions in this file.

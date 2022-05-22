@@ -235,7 +235,7 @@ def test_get_verb():
         # is one of the words in the present_plural_verb list.
         assert word in present_plural_verbs
 
-
+    
     # future
     future_verbs = ["will drink", "will eat", "will grow", "will laugh","will think", "will run", "will sleep", "will talk", "will walk", "will write"]
     for _ in range(4):

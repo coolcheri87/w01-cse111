@@ -49,7 +49,8 @@ def get_noun(quantity):
     words = ["birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", "rabbits", "women"]
     if quantity == 1:
         words = ["bird", "boy", "car", "cat", "child", "dog", "girl", "man", "rabbit", "woman"]
-    return random.choice(words)
+    word = random.choice(words)
+    return word
     
 
 def get_verb(quantity, tense):
@@ -101,6 +102,33 @@ def get_verb(quantity, tense):
         "will think", "will run", "will sleep", "will talk", "will walk", "will write"]
 
     # return a random verb according to selection criteria
-    return random.choice(words)
+    word = random.choice(words)
+    return word
+
+def main():
+    qty = 0
+    tense = "past"
+    print("a. I " + get_verb(qty,tense) + " trash with " + get_determiner(qty) + " things with " + get_noun(qty) + " as well.")
+
+    qty = 0
+    tense = "present"
+    print("b. I want to" + get_determiner(qty) + " gendarmes " + get_verb(qty,tense) + " with " + get_noun(qty) + " at sunset.")
+
+    qty = 0
+    tense = "future"
+    print("c. My son " + get_determiner(qty) + " people " + get_verb(qty,tense) + " with " + get_noun(qty) + " at local restaurant.")
+
+    qty = 0
+    tense = "past"
+    print("d. We " + get_verb(qty,tense) + " open with " + get_determiner(qty) + " clear " + get_noun(qty) + " as well.")
+
+    qty = 0
+    tense = "present"
+    print("e. Children going away " + get_determiner(qty) + " into wood " + get_verb(qty,tense) + " with " + get_noun(qty) + " at zoo.")
+
+    qty = 0
+    tense = "future"
+    print("f. Our cars " + get_determiner(qty) + " lost " + get_verb(qty,tense) + " with " + get_noun(qty) + " wonderful dream.")
+
  
-  
+main()

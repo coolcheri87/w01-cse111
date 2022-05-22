@@ -1,4 +1,6 @@
 # Cheri Hansen
+
+from pyparsing import WordStart
 from sentences import get_determiner, get_noun, get_verb
 import random
 import pytest
@@ -33,7 +35,8 @@ def get_determiner(quantity):
         words = ["a", "one", "the"]
     else:
         words = ["two", "some", "many", "the"]
-    return random.choice(word)
+    word = random.choice(words)
+    return word  
 
 def get_noun(quantity):
     """Return a randomly chosen noun.
@@ -52,27 +55,35 @@ def get_noun(quantity):
     Return: a randomly chosen noun.
     """
     words = ["boy", "girl", "cat", "dog", "bird", "house"]
-    if quantity == 1:
+    if words == "single":
             words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
-    else:
-            words = [ "birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", 
-            "rabbits", "women"]
-    return random.choice(word)
+            if quantity == 1:
+                words = ["bird", "boy", "car", "cat", "child","dog", "girl", "man", "rabbit", "woman"]
 
+    if words == "plural":
+            words = ["birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", 
+            "rabbits", "women"]
+    word = random.choice(words)
+    return word
 
 def get_verb(quantity, tense):
-    """Return a randomly chosen verb. If tense is "past",
+    """Return a randomly chosen verb.
+    
+    If tense is "past",
     this function will return one of these ten verbs:
         "drank", "ate", "grew", "laughed", "thought",
         "ran", "slept", "talked", "walked", "wrote"
+
     If tense is "present" and quantity is 1, this
     function will return one of these ten verbs:
         "drinks", "eats", "grows", "laughs", "thinks",
         "runs", "sleeps", "talks", "walks", "writes"
+
     If tense is "present" and quantity is NOT 1,
     this function will return one of these ten verbs:
         "drink", "eat", "grow", "laugh", "think",
         "run", "sleep", "talk", "walk", "write"
+
     If tense is "future", this function will return one of
     these ten verbs:
         "will drink", "will eat", "will grow", "will laugh",
@@ -86,21 +97,17 @@ def get_verb(quantity, tense):
             either "past", "present" or "future".
     Return: a randomly chosen verb.
     """
-    words = [ "drank", "ate", "grew", "laughed", "thought",
-        "ran", "slept", "talked", "walked", "wrote"]
+    # default is past
+    words = [ "drank", "ate", "grew", "laughed", "thought", "ran", "slept", "talked", "walked", "wrote"]
    
-    if quantity == 1:
-        words = [ "drank", "ate", "grew", "laughed", "thought",
-        "ran", "slept", "talked", "walked", "wrote"]  
-    else quantity !== 1:
-        words = ["drink", "eat", "grow", "laugh", "think",
-        "run", "sleep", "talk", "walk", "write"]
-    eise:
-        words = ["will drink", "will eat", "will grow", "will laugh",
-        "will think", "will run", "will sleep", "will talk",
-        "will walk", "will write"]
-
-    return random.choice(word)
+    if tense == "present":
+        if quantity == 1:
+            words = ["drinks", "eats", "grows", "laughs", "thinks", "runs", "sleeps", "talks", "walks", "writes"]
+        if quantity != 1:
+            words = ["drink", "eat", "grow", "laugh", "think", "run", "sleep", "talk", "walk", "write"]
+    if tense == "future":
+        words = ["will drink", "will eat", "will grow", "will laugh","will think", "will run", "will sleep", "will talk", "will walk", "will write"]
+    return random.choice(words)
 
 def test_get_determiner():
     # 1. Test the single determiners.
@@ -146,7 +153,7 @@ def test_get_determiner():
 
  # Randomly choose and return a determiner.
     word = random.choice(words)
-    return word
+    return words
 
 # Call the main function that is part of pytest so that the
 # computer will execute the test functions in this file.
